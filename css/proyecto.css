@@ -1,0 +1,25 @@
+body {
+    color: white;
+    background-color:rgb(41, 38, 38);
+}
+h1 {
+    color:dodgerblue;
+    text-decoration: none;
+}
+a:link {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover {
+    color:blue;
+    text-decoration: none;
+}
+a:visited {
+    color:skyblue;
+    text-decoration: none;
+}
+
+h2 {
+    color:royalblue;
+    text-decoration: none;
+}
