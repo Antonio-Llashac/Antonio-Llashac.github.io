@@ -1,0 +1,42 @@
+/* index.css  ->  <link rel="stylesheet" href="index.css"> */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;color:#000;background:#fff;line-height:1.25}
+a{color:inherit;text-decoration:none}
+img{display:block}
+ul,ol{list-style:none}
+
+header{height:94px;padding:0 23px 0 24px;background:#e8e3e3;display:flex;align-items:center}
+header > div{width:182px;height:56px;background:#aaa8a9;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px}
+header nav{margin-left:auto;display:flex;gap:31px}
+header nav a{width:182px;height:40px;background:#aaa8a9;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px}
+
+main{display:grid;grid-template-columns:883fr 367fr;min-height:calc(100vh - 94px)}
+
+/* Imagen grande de la izquierda (el texto es el alt de la imagen) */
+main > section{background:#c2c0c1}
+main > section img{width:100%;height:100%;min-height:calc(100vh - 94px);line-height:calc(100vh - 94px);text-align:center;font-size:28px;object-fit:cover;background:#c2c0c1}
+
+/* Panel derecho */
+aside{display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:98px 30px 57px;text-align:center}
+aside h1{font-size:20px;font-weight:400;line-height:1.15}
+aside h2{font-size:13px;font-weight:400;margin-bottom:17px}
+aside p{font-size:13px;margin-bottom:15px}
+
+form{display:flex;flex-direction:column;align-items:center}
+input{width:242px;height:37px;margin-bottom:28px;padding:0 10px;background:#d9d9d9;border:0;border-radius:0;text-align:center;font:13px inherit;font-family:inherit}
+input:last-of-type{margin-bottom:0}
+input:focus{outline:2px solid #000}
+
+/* Etiquetas y botón "Ingresar" no aparecen en el wireframe: se ocultan visualmente (siguen accesibles) */
+label,form button{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+form button:focus{position:static;width:auto;height:auto;clip:auto;margin-top:12px;padding:8px 20px;background:#000;color:#fff;border:0}
+
+aside section:last-child a{display:flex;align-items:center;justify-content:center;width:251px;height:53px;background:#d9d9d9;font-size:28px}
+
+@media (max-width:800px){
+  header{height:auto;flex-direction:column;gap:12px;padding:12px}
+  header nav{margin:0;flex-wrap:wrap;justify-content:center;gap:12px}
+  main{grid-template-columns:1fr}
+  main > section img{min-height:220px;line-height:220px}
+  aside{gap:40px;padding:40px 20px}
+}
