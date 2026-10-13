@@ -1,0 +1,48 @@
+/* contacto.css  ->  <link rel="stylesheet" href="contacto.css"> */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;color:#000;background:#EDF3F9;line-height:1.25}
+a{color:inherit;text-decoration:none}
+img{display:block}
+ul,ol{list-style:none}
+
+/* El wireframe no tiene barra superior: se oculta el header.
+   Borra esta regla si quieres mostrar la navegación. */
+header{display:none}
+
+main{min-height:100vh;display:grid;grid-template-columns:695fr 630fr;background:linear-gradient(to right,#d9d9d9 0,#d9d9d9 52.45%,#b2b8c0 52.45%)}
+
+/* Columna izquierda: formulario */
+main > section{padding:43px 20px 40px 29px}
+main > section h1{display:inline-block;height:75px;margin-left:39px;padding:0 10px;background:#a8cfe0;border-radius:5px;font-size:38px;font-weight:800;font-style:italic;line-height:75px}
+main > section p{margin-top:33px;margin-bottom:25px;font-size:17px}
+
+form{display:grid;grid-template-columns:250px 287px;column-gap:38px;row-gap:16px;width:575px;max-width:100%}
+form > div:nth-child(4),form > div:nth-child(5){grid-column:1 / -1}
+label{display:block;margin-bottom:7px;font-size:17px}
+input[type="text"],input[type="email"],textarea{display:block;width:100%;background:#fff;border:0;border-radius:5px;font:inherit;font-size:17px;padding:0 12px}
+input[type="text"],input[type="email"]{height:52px}
+textarea{height:120px;padding:10px 12px;resize:none}
+input:focus,textarea:focus{outline:2px solid #000}
+
+/* Captcha */
+form > div:nth-child(5){display:flex;align-items:center;gap:12px;width:320px;max-width:100%;height:40px;margin-top:7px;padding:0 8px;background:#fff;border-radius:5px}
+form > div:nth-child(5) label{margin:0}
+input[type="checkbox"]{appearance:none;-webkit-appearance:none;flex:none;width:32px;height:32px;background:#e6e6e6;border-radius:4px;cursor:pointer}
+input[type="checkbox"]:checked{background:#1a1a1a}
+
+button{grid-column:1 / -1;justify-self:start;margin:31px 0 0 23px;padding:4px 8px;background:#000;color:#fff;border:0;border-radius:4px;font:inherit;font-size:17px;cursor:pointer}
+
+/* Columna derecha: tarjeta "Otras formas de contacto" */
+aside{align-self:start;margin:48px 57px 0 35px;padding:22px 14px 32px;background:#e0e0e0;border-radius:14px}
+aside h2{display:inline-block;height:48px;margin-bottom:35px;padding:0 8px;background:#c6a2a2;border-radius:10px;font-family:"Abhaya Libre",Georgia,"Times New Roman",serif;font-size:28px;font-weight:700;line-height:48px}
+aside ul{list-style:"-  ";padding-left:34px}
+aside li{margin-bottom:22px;font-size:19px;line-height:1.3;overflow-wrap:anywhere}
+aside li:last-child{margin-bottom:0}
+
+@media (max-width:900px){
+  main{grid-template-columns:1fr;background:#d9d9d9}
+  main > section{padding:24px 16px}
+  main > section h1{margin-left:0;font-size:30px}
+  form{grid-template-columns:1fr}
+  aside{margin:0;border-radius:0;background:#b2b8c0}
+}
