@@ -4,61 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contáctanos | ISO/IEC 27001</title>
-  <link rel="stylesheet" href="css\contacto.css">
+  <link rel="stylesheet" href="css/contacto.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="saber-mas.html">Saber más</a>
-      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <!-- Espacio para el logotipo a la izquierda -->
+      <a href="index.html" class="logo">
+        <img src="css/img/logo.png" alt="Logo Referencia">
+      </a>
+
+      <!-- Bloque de navegación a la derecha -->
+      <div class="menu-links">
+        <a href="saber-mas.html">Saber más</a>
+        <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+        <a href="index.html" class="active">Inicio</a>
+      </div>
     </nav>
   </header>
 
   <main>
+    <!-- COLUMNA IZQUIERDA: Formulario de Contacto -->
     <section>
       <h1>Contáctanos</h1>
       <p>Cuéntanos tu duda o sugerencia. Te responderemos en 24 o 48 horas.</p>
 
       <form action="#" method="post">
         <div>
-          <label for="nombre">Nombre</label></br>
+          <label for="nombre">Nombre<span>*</span></label>
           <input type="text" id="nombre" name="nombre" required>
         </div>
 
         <div>
-          <label for="correo">Correo electrónico</label></br>
+          <label for="correo">Correo Electrónico<span>*</span></label>
           <input type="email" id="correo" name="correo" required>
         </div>
 
         <div>
-          <label for="asunto">Asunto</label></br>
+          <label for="asunto">Asunto<span>*</span></label>
           <input type="text" id="asunto" name="asunto" required>
         </div>
 
         <div>
-          <label for="mensaje">Mensaje</label></br>
-          <textarea id="mensaje" name="mensaje" rows="6" cols="20" required></textarea>
+          <label for="mensaje">Mensaje<span>*</span></label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
         </div>
 
         <div>
           <input type="checkbox" id="captcha" name="captcha" required>
-          <label for="captcha">No soy un robot (captcha)</label></br>
+          <label for="captcha">No soy un robot (captcha)</label>
         </div>
 
         <button type="submit">Enviar mensaje</button>
       </form>
     </section>
 
+    <!-- COLUMNA DERECHA: Datos alternativos de contacto -->
     <aside>
       <h2>Otras formas de contacto</h2>
-      <ul>
-        <li>Correo: <a href="mailto:NyE.of.cybersecurity@tuproyecto.com">NyE.of.cybersecurity@tuproyecto.com</a></li>
-        <li>Teléfono: <a href="tel:+51967670670">+51 967 670 670</a></li>
-        <li>Usuario: @NyE.of.cybersecurity</li>
-        <li>Horario: lunes a viernes, 9:00 a 18:00</li>
-      </ul>
+      
+      <!-- Contenedor con la clase para el fondo degradado azul -->
+      <div class="contact-card">
+        <ul>
+          <li>📩 <a href="mailto:NyE.of.cybersecurity@tuproyecto.com">NyE.of.cybersecurity@tuproyecto.com</a></li>
+          <li>📞 <a href="tel:+51967670670">+51 967 670 670</a></li>
+          <li>🌐 @NyE.of.cybersecurity</li>
+          <li>📅 Lunes a viernes, 9:00 a 18:00</li>
+        </ul>
+      </div>
     </aside>
   </main>
 </body>
 </html>
+

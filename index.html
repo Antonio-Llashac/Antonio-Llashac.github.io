@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio | ISO/IEC 27001</title>
-  <link rel="stylesheet" href="css\index.css">
-  <script src="javascript/script.js" defer></script>
+  <title>NyE | ISO/IEC 27001</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div>Logo o nombre del proyecto</div>
+    <a class="logo" href="index.html"><img src="css/img/logo.png" alt="NyE, ir al inicio"></a>
     <nav>
       <a href="saber-mas.html">Saber más</a>
       <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
@@ -18,28 +18,29 @@
   </header>
 
   <main>
-    <section>
-      <img src="https://img.magnific.com/foto-gratis/primer-plano-lugar-trabajo_1098-2002.jpg?t=st=1791581372~exp=1791584972~hmac=1ceb658685308daba5540f012070a09e0aedb8be9f26975bcf51f3774d666931&w=1480" alt="Imagen relacionada a la ciberseguridad"
-      width="1000" height="500">
+    <section class="imagen">
+      <img src="css/img/candado.jpg" alt="Candado digital sobre una red de puntos conectados">
     </section>
 
     <aside>
-      <h1>Infórmate de este mundo digital, y sé parte de este futuro</h1>
+      <h1>Infórmate de este mundo digital,<br>y sé parte de este futuro</h1>
 
-      <section>
+      <section class="login">
         <h2>¿Ya tienes una cuenta?</h2>
         <form action="#" method="post">
-          <label for="usuario">Usuario o correo electrónico</label></br>
-          <input type="text" id="usuario" name="usuario" placeholder="Pon tu usuario o correo electrónico"></br>
-
-          <label for="clave">Contraseña</label></br>
-          <input type="password" id="clave" name="clave" placeholder="Ingresa tu contraseña"></br></br>
-
+          <div class="campo">
+            <label for="usuario">Usuario o correo electrónico</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Pon tu usuario o correo electrónico">
+          </div>
+          <div class="campo">
+            <label for="clave">Contraseña</label>
+            <input type="password" id="clave" name="clave" placeholder="Ingresa tu contraseña">
+          </div>
           <button type="submit">Ingresar</button>
         </form>
       </section>
 
-      <section>
+      <section class="registro">
         <p>¿No tienes una cuenta aún?</p>
         <a href="registro.html">Regístrate</a>
       </section>
