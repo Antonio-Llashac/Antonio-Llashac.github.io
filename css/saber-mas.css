@@ -1,31 +1,194 @@
-/* saber-mas.css  ->  <link rel="stylesheet" href="saber-mas.css"> */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;color:#000;background:#EDF3F9;line-height:1.25}
-a{color:inherit;text-decoration:none}
-img{display:block}
-ul,ol{list-style:none}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-header{height:131px;padding:0 38px 0 51px;background:#d9d9d9;display:flex;align-items:center}
-header nav{width:100%;display:flex;gap:79px}
-header nav a{display:flex;align-items:center;justify-content:center;text-align:center;width:190px;height:70px;padding:0 40px;background:#aaa8a9;font-size:19px;line-height:1.2}
-header nav a:first-child{height:68px;margin-right:auto}
+body {
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    color: #ffffff;
+    
+    /* RUTA CORREGIDA: sale de css entra a img */
+    background-image: url('img/fondo-saber-mas.jpg'); 
+    
+    /* Control de tamaño y proporciones de la imagen de fondo */
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #111a16; 
+    
+    line-height: 1.3;
+}
 
-main{display:grid;grid-template-columns:673px 1fr;padding:47px 0 85px 51px}
 
-main > section{min-height:567px;padding:96px 71px 40px;background:#d9d9d9}
-main > section h1{max-width:520px;margin-bottom:93px;font-size:38px;font-weight:400;line-height:1.25}
-main > section p{max-width:520px;font-size:28px;line-height:1.25}
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-aside{text-align:center}
-aside h2{margin-bottom:72px;font-size:28px;font-weight:400;line-height:1.2}
-aside ul{display:flex;flex-direction:column;align-items:center;gap:90px}
-aside li a{display:flex;align-items:center;justify-content:center;width:222px;height:84px;background:#d9d9d9;font-size:30px}
+ul {
+    list-style: none;
+}
 
-@media (max-width:1000px){
-  header{height:auto;flex-wrap:wrap;gap:12px;padding:12px}
-  header nav{flex-wrap:wrap;gap:12px}
-  main{grid-template-columns:1fr;gap:40px;padding:24px 16px}
-  main > section{padding:40px 24px}
-  main > section h1{margin-bottom:40px;font-size:30px}
-  main > section p{font-size:22px}
+/* Cabecera / Header */
+header {
+    height: 97px;
+    padding: 0 50px;
+    /* Degradado de azul muy oscuro a azul rey metálico */
+    background: linear-gradient(to right, #051622 0%, #0a2e5c 35%, #185a9d 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #118AC5;
+}
+
+/* Estilo del Logo NyE (Cian y redondeado/moderno) */
+header .logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+header .logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Corrección del contenedor para que coincida con tu HTML */
+header .enlaces-menu {
+    display: flex;
+    gap: 40px; /* Esto da la separación perfecta entre las palabras */
+}
+
+/* Forzar tipografía Inter y estilos limpios en los enlaces */
+header .enlaces-menu a {
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif; /* Mantiene la misma fuente */
+    font-size: 18px; 
+    font-weight: 500; 
+    color: #ffffff;
+    transition: color 0.2s ease;
+}
+
+/* Contenedor Principal (Distribución en dos columnas) */
+main {
+    display: grid;
+    grid-template-columns: 53% 47%;
+    max-width: 1250px;
+    margin: 80px auto 0 auto;
+    padding: 0 40px;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Tarjeta de Información Izquierda (Estilo Oscuro Original) */
+.tarjeta-info {
+    /* Degradado oscuro característico que combina con el fondo de red */
+    background: linear-gradient(145deg, #373a46 0%, #21232b 50%, #17181e 100%);
+    
+    width: 100%;
+    max-width: 580px;
+    height: 520px;
+    padding: 90px 45px 50px 45px;
+    border-radius: 28px;
+    will-change: transform;
+    
+    /* Sombra profunda para dar volumen sobre el fondo oscuro */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    
+    /* Borde muy fino y sutil */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Color del título principal en blanco para resaltar */
+.tarjeta-info h1 {
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    line-height: 1.25;
+    color: #ffffff;
+}
+
+/* Color del párrafo descriptivo en gris claro */
+.tarjeta-info p {
+    font-size: 21px;
+    color: #d1d5db;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* Menú Lateral Derecho (Botones Cápsula) */
+.menu-lateral {
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.nav-botones ul {
+    display: flex;
+    flex-direction: column;
+    gap: 75px; /* Distancia amplia entre botones tal como la imagen */
+}
+
+.nav-botones li a.btn-azul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 70px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    /* Degradado azul con bordes definidos */
+    background: linear-gradient(to bottom, #193f6d 0%, #0d2343 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Responsivo para pantallas medianas/pequeñas */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        margin: 40px auto;
+        gap: 50px;
+        justify-items: center;
+    }
+
+    .tarjeta-info {
+        height: auto;
+        padding: 50px 30px;
+    }
+
+    .menu-lateral {
+        padding-left: 0;
+    }
+    
+    .nav-botones ul {
+        gap: 35px;
+    }
 }

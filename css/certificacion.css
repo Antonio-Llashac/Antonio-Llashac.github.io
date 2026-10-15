@@ -1,35 +1,45 @@
-/* certificacion.css  ->  <link rel="stylesheet" href="certificacion.css"> */
+/* certificacion.css  ->  <link rel="stylesheet" href="certificacion.css">
+   Fondo: puntos2.png (debe estar en la misma carpeta) */
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;color:#000;background:#EDF3F9;line-height:1.25}
-a{color:inherit;text-decoration:none}
-img{display:block}
-ul,ol{list-style:none}
 
-header{height:107px;padding:0 53px 0 28px;background:#d9d9d9;display:flex;align-items:center}
-header nav{width:100%;display:flex;gap:49px}
-header nav a{display:flex;align-items:center;justify-content:center;text-align:center;width:189px;height:66px;padding:0 24px;background:#aaa8a9;font-size:19px;line-height:1.2}
-header nav a:first-child{width:170px;margin-right:auto}
+html{background:#f5f5f5}
+body{min-height:100vh;display:flex;flex-direction:column;font-family:"Fira Sans","Mukta","Segoe UI",Roboto,Arial,sans-serif;color:#111;line-height:1.3}
 
-main{padding:0 53px 0 28px}
-main > h1{margin:18px 0 17px 16px;font-size:28px;font-weight:400;line-height:1.2}
+/* Red de puntos de fondo, muy tenue */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:url("img/puntos2.png") center top / cover no-repeat;opacity:.16;mix-blend-mode:multiply;pointer-events:none}
 
-/* 4 tarjetas arriba, la 5.ª centrada abajo */
-ol{counter-reset:paso;display:grid;grid-template-columns:repeat(8,1fr);column-gap:clamp(16px,5.4vw,70px);row-gap:49px}
-li{counter-increment:paso;grid-column:span 2;min-height:240px;padding:11px 9px;background:#d9d9d9;display:grid;grid-template-columns:68px 1fr;grid-template-rows:68px 1fr;column-gap:8px;align-items:center}
-li:nth-child(5){grid-column:4 / span 2}
-li::before{content:counter(paso);display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#b3b3b3;font-size:28px}
-li h2{padding-right:8px;font-size:21px;font-weight:400;line-height:1.15}
-li p{grid-column:1 / -1;align-self:start;max-width:190px;margin-top:24px;padding-left:7px;font-size:21px;line-height:1.3}
+/* ===== Encabezado ===== */
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:54px;padding:4px 5% 4px 2.5%;background:linear-gradient(90deg,#08162c 0%,#0e2b57 40%,#2a68ae 100%);border-bottom:3px solid #1ba6e6}
+.logo{display:block;line-height:0}
+.logo img{display:block;height:38px;width:auto}
+nav{display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,40px)}
+nav a{color:#fff;font-weight:700;font-size:.95rem;text-decoration:none}
+nav a:hover{text-decoration:underline}
 
-/* El botón queda a la izquierda, a la altura de la 5.ª tarjeta */
-footer{margin-top:-68px;padding:0 0 122px 69px}
-footer a{display:flex;align-items:center;justify-content:center;width:170px;height:68px;background:#aaa8a9;font-size:19px}
+/* ===== Contenido ===== */
+main{flex:1;padding:8px 2.8% 0 2.2%}
+h1{margin-bottom:12px;font-size:clamp(2rem,5.3vw,3.6rem);font-weight:700;line-height:1.1}
 
-@media (max-width:900px){
-  header{height:auto;flex-wrap:wrap;gap:12px;padding:12px}
-  header nav{flex-wrap:wrap;gap:12px}
-  main{padding:0 16px}
-  ol{grid-template-columns:1fr 1fr;gap:20px}
-  li:nth-child(5){grid-column:auto}
-  footer{margin-top:24px;padding:0 16px 40px}
+.pasos{margin-top:clamp(40px,7vw,100px);display:grid;grid-template-columns:1fr 1fr;column-gap:7%;align-items:start}
+.pasos > div{display:flex;flex-direction:column;gap:26px}
+
+/* Rectángulos desplegables */
+details{background:#eee;border-radius:10px;box-shadow:0 3px 3px rgba(0,0,0,.3)}
+summary{display:flex;align-items:center;gap:14px;min-height:56px;padding:6px 20px 6px 7px;font-size:1.05rem;font-weight:700;list-style:none;cursor:pointer;border-radius:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;margin-left:auto;width:9px;height:9px;border-right:3px solid #1d5aa6;border-bottom:3px solid #1d5aa6;transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+summary:focus-visible{outline:3px solid #1ba6e6;outline-offset:2px}
+.num{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(90deg,#08162c 0%,#0e2b57 35%,#2a68ae 100%);color:#fff;font-size:1.4rem;font-weight:700}
+details p{padding:2px 20px 18px 65px;font-size:.95rem;font-weight:400;line-height:1.55;color:#333}
+
+/* ===== Botón atrás ===== */
+footer{padding:30px 2.5% 40px 2.8%}
+.atras{display:inline-flex;align-items:center;justify-content:center;min-width:109px;height:44px;padding:0 28px;background:linear-gradient(90deg,#08162c,#2a68ae);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;border-radius:14px}
+.atras:hover{filter:brightness(1.15)}
+
+@media (max-width:800px){
+  header{flex-wrap:wrap;justify-content:center;padding:10px}
+  .pasos{grid-template-columns:1fr;row-gap:26px}
+  details p{padding-left:20px}
 }
