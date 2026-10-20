@@ -1,0 +1,80 @@
+/* efectos.css -> preloader, menú a pantalla completa y aparición al hacer scroll.
+   Lo usa js/efectos.js. Si el JavaScript no carga, el contenido se ve igual. */
+
+/* ===== Preloader ===== */
+.precarga {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  background: #0c0f14;
+  transition: opacity .5s, visibility .5s;
+}
+.precarga.fuera { opacity: 0; visibility: hidden; }
+.precarga span {
+  width: 54px; height: 54px;
+  border: 4px solid rgba(27, 166, 230, .25);
+  border-top-color: #1ba6e6;
+  border-radius: 50%;
+  animation: giro .9s linear infinite;
+}
+@keyframes giro { to { transform: rotate(360deg); } }
+
+/* ===== Botón del menú ===== */
+.menu-btn { display: grid; gap: 5px; padding: 10px; background: none; border: 0; cursor: pointer; }
+.menu-btn span { display: block; width: 26px; height: 3px; background: #fff; border-radius: 2px; transition: transform .3s, opacity .3s; }
+.menu-abierto .menu-btn span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-abierto .menu-btn span:nth-child(2) { opacity: 0; }
+.menu-abierto .menu-btn span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ===== Menú a pantalla completa ===== */
+.menu-abierto { overflow: hidden; }
+.menu-abierto header { z-index: 60; }
+
+.menu-pantalla {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 90px 10% 40px;
+  background: linear-gradient(rgba(12,15,20, .9), rgba(12,15,20, .96)), url("img/candado.jpg") center / cover;
+  clip-path: circle(0 at calc(100% - 40px) 40px);
+  visibility: hidden;
+  transition: clip-path .7s cubic-bezier(.7, 0, .2, 1), visibility 0s .7s;
+}
+.menu-abierto .menu-pantalla {
+  clip-path: circle(150% at calc(100% - 40px) 40px);
+  visibility: visible;
+  transition: clip-path .7s cubic-bezier(.7, 0, .2, 1), visibility 0s;
+}
+.menu-pantalla ol { list-style: none; counter-reset: m; }
+.menu-pantalla li {
+  counter-increment: m;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .5s, transform .5s;
+}
+.menu-abierto .menu-pantalla li { opacity: 1; transform: none; transition-delay: calc(var(--i) * 70ms + 300ms); }
+.menu-pantalla a {
+  display: inline-flex; align-items: baseline; gap: 18px;
+  padding: 6px 0;
+  font-size: clamp(2rem, 6vw, 3.8rem); font-weight: 700; line-height: 1.15;
+  transition: color .2s, transform .2s;
+}
+.menu-pantalla a::before { content: counter(m, decimal-leading-zero); font-size: 1rem; color: #1ba6e6; }
+.menu-pantalla a:hover { color: #1ba6e6; transform: translateX(14px); }
+.menu-pantalla p { margin-top: 30px; color: #8fa0b5; }
+
+/* ===== Aparición al hacer scroll ===== */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
+.js .reveal.visible { opacity: 1; transform: none; transition: opacity .7s, transform .7s, padding .25s, background .25s; }
+
+@media (max-width: 860px) {
+  header nav > a:not(.acceso) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .precarga span { animation: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .menu-pantalla, .menu-abierto .menu-pantalla, .menu-pantalla li { transition: none; }
+}
+
+/* Acento secundario menta para cifras y datos */
+:root { --menta: #4fd1b5; }
+.cifras strong, .linea b, .temas strong { color: var(--menta); }
+.barra i { background: var(--menta); }
