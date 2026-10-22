@@ -1,157 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NyE | ISO/IEC 27001</title>
-  <link rel="stylesheet" href="css/inicio.css">
-  <link rel="stylesheet" href="css/efectos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saber más | ISO/IEC 27001</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="precarga" aria-hidden="true"><span></span></div>
-  <header>
-    <a class="logo" href="index.html"><img src="css/img/logo.png" alt="NyE, ir al inicio"></a>
-    <nav>
-      <a href="saber-mas.html">Saber más</a>
-      <a href="normativas.html">Normativas</a>
-      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-      <a href="contacto.html">Contáctanos</a>
-      <a class="acceso" href="login.html">Ingresar</a>
-    <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Portada -->
-    <section class="portada">
-      <div class="portada-texto">
-        <h1>Protege la información de tu empresa con la ISO/IEC 27001</h1>
-        <p>Guía sobre el estándar internacional para gestionar la ciberseguridad: ¿qué es?, ¿cómo se aplica en entornos empresariales? y ¿cómo se certifica?</p>
-        <div class="botones">
-          <a class="btn btn-cian" href="saber-mas.html">Saber más</a>
-          <a class="btn btn-borde" href="registro.html">Regístrate</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tres tarjetas principales -->
-    <section class="bloque tarjetas-principales" aria-labelledby="t-conoce">
-      <h2 id="t-conoce">Conoce la norma paso a paso</h2>
-      <div class="rejilla-3">
-        <article class="tarjeta">
-          <h3>¿Qué es?</h3>
-          <p>El estándar internacional para proteger los activos de información y gestionar riesgos de forma sistemática.</p>
-          <a class="btn btn-cian" href="que-es.html">Quiero conocerla</a>
-        </article>
-        <article class="tarjeta">
-          <h3>Estructura</h3>
-          <p>Las cláusulas 4 a 10 contienen los requisitos que una organización debe cumplir para certificarse.</p>
-          <a class="btn btn-cian" href="estructura.html">Ver la estructura</a>
-        </article>
-        <article class="tarjeta">
-          <h3>Certificación</h3>
-          <p>El camino desde definir el alcance hasta mantener y mejorar el sistema de gestión.</p>
-          <a class="btn btn-cian" href="certificacion.html">Ver el camino</a>
-        </article>
-      </div>
-      <p class="experto"><a class="btn btn-borde" href="contacto.html">Quiero hablar con un experto</a></p>
-    </section>
-
-    <!-- Pilares (equivale a la cuadrícula de industrias) -->
-    <section class="bloque pilares" aria-labelledby="t-pilares">
-      <h2 id="t-pilares">Tres pilares para proteger tu información</h2>
-      <p class="intro">Cada requisito de la norma busca preservar estas tres propiedades.</p>
-      <div class="rejilla-3">
-        <article class="pilar">
-          <h3>Confidencialidad</h3>
-          <p>Garantiza que la información solo sea accesible para las personas y sistemas autorizados.</p>
-        </article>
-        <article class="pilar">
-          <h3>Integridad</h3>
-          <p>Asegura que los datos sean precisos, completos y no sufran modificaciones no autorizadas.</p>
-        </article>
-        <article class="pilar">
-          <h3>Disponibilidad</h3>
-          <p>Logra que la información y los servicios estén accesibles para los usuarios autorizados cuando los necesiten.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Cifras -->
-    <section class="cifras" aria-label="La norma en cifras">
-      <div><strong>10</strong><span>cláusulas en la norma</span></div>
-      <div><strong>7</strong><span>con requisitos certificables (4 a 10)</span></div>
-      <div><strong>5</strong><span>etapas hacia la certificación</span></div>
-      <div><strong>3</strong><span>años de ciclo del certificado</span></div>
-    </section>
-
-    <!-- Camino a la certificación (equivale a noticias y recursos) -->
-    <section class="bloque camino" aria-labelledby="t-camino">
-      <h2 id="t-camino">Camino hacia la certificación</h2>
-      <ol class="pasos">
-        <li><h3>Definir alcance</h3><p>Qué áreas, procesos y activos cubrirá el sistema.</p></li>
-        <li><h3>Evaluar riesgos</h3><p>Identificar amenazas y decidir cómo tratarlas.</p></li>
-        <li><h3>Implantar controles</h3><p>Aplicar controles, documentar y capacitar al personal.</p></li>
-        <li><h3>Auditoría de certificación</h3><p>Un organismo acreditado revisa en dos etapas.</p></li>
-        <li><h3>Mantener y mejorar</h3><p>Auditorías anuales y recertificación a los tres años.</p></li>
-      </ol>
-      <p class="experto"><a class="btn btn-cian" href="certificacion.html">Ver cada etapa en detalle</a></p>
-    </section>
-
-    <!-- Llamada a la acción final -->
-    <section class="cierre">
-      <h2>¿Tienes una duda o una sugerencia?</h2>
-      <p>Te respondemos en 24 o 48 horas. También puedes revisar primero las preguntas frecuentes.</p>
-      <div class="botones">
-        <a class="btn btn-cian" href="contacto.html">Contáctanos</a>
-        <a class="btn btn-borde" href="preguntas-frecuentes.html">Preguntas frecuentes</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="pie-columnas">
-      <div>
-        <img src="css/img/logo.png" alt="NyE" class="pie-logo">
-        <p>NyE.of.cybersecurity</p>
-      </div>
-      <div>
-        <h3>Saber más</h3>
-        <a href="que-es.html">¿Qué es?</a>
-        <a href="estructura.html">Estructura</a>
-        <a href="certificacion.html">Certificación</a>
-        <a href="normativas.html">Normativas</a>
-      </div>
-      <div>
-        <h3>Ayuda</h3>
+    <header>
+    <!-- Logo en formato de imagen real -->
+    <a href="index.html" class="logo">
+        <img src="css/img/logo.png" alt="Logo Referencia">
+    </a>
+    
+    <!-- Enlaces agrupados a la derecha -->
+    <nav class="enlaces-menu">
+        <a href="index.html">Inicio</a>
         <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
         <a href="contacto.html">Contáctanos</a>
-      </div>
-      <div>
-        <h3>Tu cuenta</h3>
-        <a href="login.html">Ingresar</a>
-        <a href="registro.html">Regístrate</a>
-      </div>
-      <div>
-        <h3>Contacto</h3>
-        <a href="mailto:NyE.of.cybersecurity@tuproyecto.com">NyE.of.cybersecurity@tuproyecto.com</a>
-        <a href="tel:+51967670670">+51 967 670 670</a>
-        <span>Lunes a viernes, 9:00 a 18:00</span>
-      </div>
-    </div>
-  </footer>
-<div class="menu-pantalla" id="menu" aria-hidden="true">
-    <ol>
-      <li style="--i:0"><a href="index.html">Inicio</a></li>
-      <li style="--i:1"><a href="saber-mas.html">Saber más</a></li>
-      <li style="--i:2"><a href="normativas.html">Normativas</a></li>
-      <li style="--i:3"><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-      <li style="--i:4"><a href="contacto.html">Contáctanos</a></li>
-      <li style="--i:5"><a href="login.html">Ingresar</a></li>
-    </ol>
-    <p>NyE.of.cybersecurity</p>
-  </div>
-  <script src="js/efectos.js"></script>
-  <script src="js/sesion.js"></script>
+    </nav>
+
+    </header>
+
+
+    <main>
+        <!-- Tarjeta izquierda contenedora de texto -->
+        <section class="tarjeta-info">
+            <h1>ISO/IEC 27001: protege la información de tu empresa</h1>
+            <p>Guía sobre el estándar internacional para gestionar la ciberseguridad: ¿qué es?, ¿cómo se aplica en entornos empresariales? y ¿cómo se certifica?</p>
+        </section>
+
+        <!-- Bloque derecho de botones de navegación -->
+        <aside class="menu-lateral">
+            <nav class="nav-botones">
+                <ul>
+                    <li><a href="que-es.html" class="btn-azul">¿Qué es?</a></li>
+                    <li><a href="estructura.html" class="btn-azul">Estructura</a></li>
+                    <li><a href="certificacion.html" class="btn-azul">Certificación</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </main>
+
+    <!-- VÍNCULO CORREGIDO: con el nombre de carpeta "javascript" -->
+    <script src="js/sesion.js"></script>
 </body>
 </html>

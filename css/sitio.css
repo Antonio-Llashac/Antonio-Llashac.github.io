@@ -264,3 +264,58 @@ footer a:hover { background: var(--cian); color: var(--azul-noche); }
 @media (max-width: 1100px) { .pg-saber main { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .pg-saber .nav-botones ul { grid-template-columns: 1fr; } .pg-saber .tarjeta-info { padding: 36px 26px; } }
 @media (prefers-reduced-motion: reduce) { .pg-saber .btn-azul { transition: none; transform: none; } }
+
+/* ===== En la práctica ===== */
+.acciones.izq { justify-content: flex-start; margin-bottom: 8px; }
+.contenedor { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 6%; }
+.sgsi { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
+.sgsi svg { display: block; width: 100%; max-width: 520px; margin: auto; }
+.nodo { cursor: pointer; }
+.nodo:focus { outline: none; }
+.nodo circle { fill: var(--azul-noche); stroke: var(--cian); stroke-width: 2.5; transition: fill .2s; }
+.nodo use { stroke: var(--cian); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.nodo:hover circle, .nodo:focus-visible circle, .nodo.on circle { fill: var(--cian); }
+.nodo:hover use, .nodo:focus-visible use, .nodo.on use { stroke: var(--azul-noche); }
+.sgsi-info, .sim-controles, .sim-res, .auto { padding: 28px; background: var(--cristal); border: 1px solid var(--borde); border-radius: 20px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.sgsi-info { min-height: 190px; }
+.sgsi-info h3 { margin-bottom: 8px; font-size: 1.4rem; color: var(--menta); }
+.sgsi-info p { color: #d3dbe6; }
+
+.sim { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sim-controles label, .auto label { display: flex; align-items: flex-start; gap: 12px; margin: 0 0 16px; font-weight: 400; cursor: pointer; }
+.auto label { align-items: center; }
+.sim-controles .tx { margin: 0; color: inherit; }
+.sim-controles strong { display: block; }
+.sim-controles em { display: block; font-style: normal; font-size: .95rem; color: var(--texto-suave); }
+.sim-controles input, .auto input { flex: none; margin-top: 2px; }
+.medidor { display: grid; grid-template-columns: 100px 1fr 40px; gap: 12px; align-items: center; margin-bottom: 14px; }
+.medidor .barra { height: 10px; margin: 0; }
+.medidor .barra i, .auto .barra i { transition: width .5s; }
+.nivel { margin: 22px 0 14px; padding: 18px; text-align: center; border: 2px solid var(--menta); border-radius: 14px; transition: border-color .3s; }
+.nivel small { display: block; color: var(--texto-suave); }
+.nivel strong { font-size: 2rem; }
+.nivel[data-nivel="medio"] { border-color: #f2c14e; } .nivel[data-nivel="alto"] { border-color: #f28b4e; } .nivel[data-nivel="critico"] { border-color: #ef5b5b; }
+.sim-res p { color: #d3dbe6; }
+
+.banda-clara { margin-top: 72px; padding: 72px 0; background: #eef2f7; color: #0c0f14; }
+.banda-clara h2 { margin-bottom: 8px; color: #0c0f14; }
+.banda-clara .intro-c { max-width: 46rem; margin-bottom: 28px; color: #3b4656; }
+.banda-clara .ico { stroke: #0e6fa8; }
+.practica { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.practica article { padding: 26px; background: #fff; border: 1px solid #d9e0ea; border-radius: 20px; }
+.practica h3 { margin: 12px 0 8px; font-size: 1.15rem; }
+.practica p { color: #3b4656; }
+
+.auto-res { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--borde); }
+.auto-res strong { font-size: 2rem; color: var(--menta); }
+.auto-res p { margin: 6px 0 16px; color: #d3dbe6; }
+.auto .barra { height: 10px; margin: 8px 0 12px; }
+#autoevaluacion { margin-bottom: 40px; }
+
+@media (max-width: 900px) { .sgsi, .sim { grid-template-columns: 1fr; } .practica { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .practica { grid-template-columns: 1fr; } .medidor { grid-template-columns: 90px 1fr 36px; } }
+
+/* ===== Saber más: iconos en las tarjetas; anclas con header fijo ===== */
+html { scroll-padding-top: 90px; }
+.pg-saber .btn-azul .ico { box-sizing: content-box; margin-bottom: 6px; padding: 9px; background: rgba(27,166,230,.12); border-radius: 12px; transition: background .2s; }
+.pg-saber .btn-azul:hover .ico { background: rgba(27,166,230,.24); }
